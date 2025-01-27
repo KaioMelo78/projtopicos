@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Tarefas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Agendamento de Tarefas</h1>
+
+    <div class="formulario" id="formularioTarefa">
+        <h2>Nova Tarefa</h2>
+        <input type="text" id="descricaoTarefa" placeholder="Descrição da tarefa" required>
+        <input type="date" id="dataTarefa" required>
+        <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+    </div>
+
+    <div class="formulario" id="formularioEdicao" style="display:none;">
+        <h2>Editar Tarefa</h2>
+        <input type="text" id="descricaoEdicao" placeholder="Descrição da tarefa" required>
+        <input type="date" id="dataEdicao" required>
+        <button onclick="salvarEdicao()">Salvar Alterações</button>
+        <button onclick="cancelarEdicao()">Cancelar</button>
+    </div>
+
+    <div id="listaTarefas"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
