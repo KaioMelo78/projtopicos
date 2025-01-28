@@ -2,36 +2,6 @@ let codigoEnviado = '';
 let tarefas = [];
 let tarefaEditando = null;
 
-// Simula o envio do código por e-mail (ou SMS)
-function enviarCodigo() {
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-
-    if (email && senha) {
-        // Gera um código aleatório
-        codigoEnviado = Math.floor(100000 + Math.random() * 900000).toString();
-        alert(`Código enviado para ${email}: ${codigoEnviado}`);
-
-        // Exibe o formulário para verificar o código
-        document.getElementById('verificarCodigo').style.display = 'block';
-    } else {
-        alert('Por favor, preencha todos os campos!');
-    }
-}
-
-// Verifica o código inserido pelo usuário
-function verificarCodigo() {
-    const codigoInserido = document.getElementById('codigo').value;
-
-    if (codigoInserido === codigoEnviado) {
-        alert('Código verificado com sucesso! Autenticação concluída.');
-        // Redireciona para a página de agendamento de tarefas
-        window.location.href = 'agenda.html';
-    } else {
-        alert('Código incorreto! Tente novamente.');
-    }
-}
-
 // Carregar tarefas do localStorage quando a página carregar
 document.addEventListener('DOMContentLoaded', () => {
     const tarefasSalvas = localStorage.getItem('tarefas');
